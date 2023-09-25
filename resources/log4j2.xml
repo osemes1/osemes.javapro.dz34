@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <File name="File" fileName="application.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/> <!-- Р”РѕРґР°РІР°РЅРЅСЏ С„Р°Р№Р»РѕРІРѕРіРѕ Р°РїРїРµРЅРґРµСЂР° -->
+        </Root>
+        <Logger name="com.example" level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/> <!-- Р”РѕРґР°РІР°РЅРЅСЏ С„Р°Р№Р»РѕРІРѕРіРѕ Р°РїРїРµРЅРґРµСЂР° -->
+        </Logger>
+    </Loggers>
+</Configuration>
