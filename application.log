@@ -1,0 +1,4 @@
+16:42:12.474 [main] INFO  LogExample - Це логування інформації
+16:42:12.478 [main] WARN  LogExample - Це логування попередження
+16:42:12.478 [main] ERROR LogExample - Це логування помилки
+16:42:12.480 [main] ERROR LogExample - Сталася помилка при обчисленні: / by zero
