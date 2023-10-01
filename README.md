@@ -1,5 +1,42 @@
 # osemes.javapro.dz34
 
+Я переробив клас Order. додав список продуктів "products" до класу Order і встановлю відношення між таблицями за допомогою анотацій JPA. 
+Також я переробив клас Product і встановив відношення між ним і Order.
+Зараз я маю відношення "один до багатьох" між Order і Product, в якому одне замовлення може містити багато продуктів. 
+Поле "order_id" буде використовуватися для зв'язку між ними. 
+Також я переробив базу даних (змінив datatypes). 
+
+Зараз проект компілюється без помилок. 
+
+ :: Spring Boot ::                (v2.5.4)
+
+07:11:50.657 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 16.0.2 on NW11-139 with PID 10776 (C:\osem\Projects\osemes.javapro.dz34\target\classes started by User303 in C:\osem\Projects\osemes.javapro.dz34)
+07:11:50.657 [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication using Java 16.0.2 on NW11-139 with PID 10776 (C:\osem\Projects\osemes.javapro.dz34\target\classes started by User303 in C:\osem\Projects\osemes.javapro.dz34)
+07:11:50.671 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+07:11:50.671 [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+07:11:51.172 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07:11:51.218 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+07:11:51.696 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+07:11:51.707 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+07:11:51.708 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+07:11:51.708 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+07:11:51.798 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07:11:51.798 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1088 ms
+07:11:51.934 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07:11:51.983 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+07:11:52.090 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+07:11:52.178 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07:11:52.462 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07:11:52.473 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07:11:53.016 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07:11:53.022 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07:11:53.284 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07:11:53.442 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+07:11:53.568 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+07:11:53.590 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+07:11:53.599 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 3.282 seconds (JVM running for 3.983)
+07:11:53.599 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 3.282 seconds (JVM running for 3.983)
+
 Виконання ДЗ 34. Spring Data
 
 1. Реалізувати клас Order. Цей клас зберігатиме значення: id, date, cost, products
