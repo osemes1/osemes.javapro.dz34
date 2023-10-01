@@ -3,7 +3,7 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "o_product")
+@Table(name = "product")
 public class Product {
 
     @Id
@@ -14,14 +14,18 @@ public class Product {
     private String name;
 
     @Column(nullable = false)
-    private Double cost;
+    private Double price;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 
     public Product() {
     }
 
-    public Product(String name, Double cost) {
+    public Product(String name, Double price) {
         this.name = name;
-        this.cost = cost;
+        this.price = price;
     }
 
     public Long getId() {
@@ -40,12 +44,19 @@ public class Product {
         this.name = name;
     }
 
-    public Double getCost() {
-        return cost;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setCost(Double cost) {
-        this.cost = cost;
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }
-
